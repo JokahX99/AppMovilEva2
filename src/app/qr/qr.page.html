@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>RegistrApp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="box">
+    <label>Qr generado.</label> 
+    <label>Projecte el codigo QR ante los alumnos.</label> 
+    <canvas #qrCanvas></canvas>
+    <ion-button (click)="goToUsers()">Terminar Asistencia</ion-button> <!-- Vincula al método -->
+  </div>
+</ion-content>

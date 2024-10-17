@@ -1,0 +1,20 @@
+.box {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columnas */
+    justify-content: center; /* Alinea verticalmente al centro */
+    align-items: center; /* Alinea horizontalmente al centro */
+    padding: 10px;
+ /* Hace que el contenedor ocupe toda la altura de la pantalla */
+}
+
+label {
+    padding-bottom: 10px;
+}
+
+canvas {
+    padding-top: 30px;
+}
+
+ion-button{
+    padding-top: 40px;
+}

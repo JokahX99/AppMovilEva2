@@ -1,0 +1,55 @@
+<!-- Menú lateral -->
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        <ion-card-title>{{ username }}</ion-card-title>
+        <ion-card-subtitle>{{ rol }}</ion-card-subtitle>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-button expand="full">Perfil</ion-button>
+    <ion-button expand="full">Configuraciones</ion-button>
+    <ion-button expand="full" (click)="goToCambiarContrasena()">Cambiar Contraseña</ion-button> <!-- Botón para cambiar contraseña -->
+    <ion-button expand="full" (click)="confirmLogout()">Cerrar Sesión</ion-button>
+  </ion-content>
+</ion-menu>
+
+<!-- Contenido principal de la página -->
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>RegistrApp</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <div class="box">
+      <br>
+      Bienvenido a RegistrApp, {{ rol }} {{ username }}.
+    </div>
+
+    <!-- Lista de clases -->
+    <div *ngIf="clases.length > 0">
+      <ion-list>
+        <ion-item *ngFor="let clase of clases">
+          <ion-label>
+            <h2>{{ clase.nombre }}</h2>
+            <p>Horario: {{ clase.horario }}</p>
+            <p>{{ clase.desc }}</p>
+          </ion-label>
+          <ion-button *ngIf="rol === 'Docente'" expand="full" (click)="goToQrPage()">Generar QR</ion-button>
+          <ion-button *ngIf="rol === 'Alumno'" expand="full">Escanear QR</ion-button>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div *ngIf="clases.length === 0">
+      <p>No tienes clases asignadas actualmente.</p>
+    </div>
+  </ion-content>
+</div>

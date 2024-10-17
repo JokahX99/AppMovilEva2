@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registrar Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Nombre de Usuario</ion-label>
+    <ion-input [(ngModel)]="username" type="text" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input [(ngModel)]="password" type="password" required></ion-input>
+  </ion-item>
+
+  <!-- Nuevo campo para seleccionar el rol -->
+  <ion-item>
+    <ion-label>Rol</ion-label>
+    <ion-select [(ngModel)]="rol" required>
+      <ion-select-option value="Alumno">Alumno</ion-select-option>
+      <ion-select-option value="Docente">Docente</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="full" (click)="registrar()">Registrar</ion-button>
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>RegistrApp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="form">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Username</ion-label>
+        <ion-input [(ngModel)]="username" type="text"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input [(ngModel)]="password" type="password"></ion-input>
+      </ion-item>
+    </ion-list>
+  
+    <ion-button expand="full" (click)="login()">Login</ion-button>
+  
+    <!-- Enlace a la página de registro -->
+    <ion-item lines="none">
+      <ion-list>
+        <ion-label>
+          ¿No tienes cuenta?<br>
+          <ion-router-link routerLink="/registrar">Registrar Usuario</ion-router-link>
+        </ion-label>
+        <br>
+        <ion-label>
+          ¿Olvidaste tu Contraseña?<br>
+          <ion-router-link routerLink="/recuperar-contra">Recuperar Contraseña</ion-router-link>
+        </ion-label>
+      </ion-list>
+  
+    </ion-item>
+  </div>
+</ion-content>
